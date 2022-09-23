@@ -1,7 +1,7 @@
-import Entrada from "../io/entrada";
-import Produto from "../modelo/produto";
-import Servico from "../modelo/servico";
-import Cadastro from "./cadastro";
+import Entrada from "../../io/entrada";
+import Produto from "../../modelo/produto";
+import Servico from "../../modelo/servico";
+import Cadastro from "../cadastro";
 
 export default class CadastroServico extends Cadastro {
     private servicos: Array<Servico>
