@@ -1,6 +1,8 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import CadastroProduto from "../processo/produto/cadastroProduto";
+import EdicaoProduto from "../processo/produto/edicaoProduto";
+import ExclusaoProduto from "../processo/produto/exclusaoProduto";
 import ListagemProdutos from "../processo/produto/listagemProduto";
 
 export default class MainProdutos {
@@ -34,12 +36,12 @@ export default class MainProdutos {
                     listagemProduto.listar()
                     break;
                 case 3:
-                    // let edicaoCliente = new EdicaoServico(this.empresa.getProdutos);
-                    // edicaoCliente.editar();
+                    let edicaoCliente = new EdicaoProduto(this.empresa.getProdutos);
+                    edicaoCliente.editar();
                     break;
                 case 4:
-                    // let exclusaoServico = new ExclusaoServico(this.empresa.getProdutos);
-                    // exclusaoServico.cadastrar()
+                    let exclusaoServico = new ExclusaoProduto(this.empresa.getProdutos);
+                    exclusaoServico.excluir()
                     break;
                 case 0:
                     console.log('\n');

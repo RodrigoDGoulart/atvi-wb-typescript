@@ -2,7 +2,7 @@ import Entrada from "../../io/entrada";
 import Produto from "../../modelo/produto";
 import Exclusao from "../exclusao";
 
-export default class ExclusaoCliente extends Exclusao {
+export default class ExclusaoProduto extends Exclusao {
     private produtos: Array<Produto>
     private entrada: Entrada
     
