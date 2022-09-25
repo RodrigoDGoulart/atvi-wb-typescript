@@ -1,6 +1,8 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import CadastroServico from "../processo/servico/cadastroServico";
+import EdicaoServico from "../processo/servico/edicaoServico";
+import ExclusaoServico from "../processo/servico/exclusaoServico";
 import ListagemServicos from "../processo/servico/listagemServico";
 
 export default class MainServicos {
@@ -34,12 +36,12 @@ export default class MainServicos {
                     listagemServico.listar()
                     break;
                 case 3:
-                    // let edicaoCliente = new EdicaoServico(this.empresa.getServicos);
-                    // edicaoCliente.editar();
+                    let edicaoCliente = new EdicaoServico(this.empresa.getServicos);
+                    edicaoCliente.editar();
                     break;
                 case 4:
-                    // let exclusaoServico = new ExclusaoServico(this.empresa.getServicos);
-                    // exclusaoServico.cadastrar()
+                    let exclusaoServico = new ExclusaoServico(this.empresa.getServicos);
+                    exclusaoServico.excluir()
                     break;
                 case 0:
                     console.log('\n');

@@ -1,29 +1,29 @@
 import Entrada from "../../io/entrada";
-import Produto from "../../modelo/produto";
+import Servico from "../../modelo/servico";
 import Exclusao from "../exclusao";
 
-export default class ExclusaoProduto extends Exclusao {
-    private produtos: Array<Produto>
+export default class ExclusaoServico extends Exclusao {
+    private servicos: Array<Servico>
     private entrada: Entrada
     
-    constructor(produtos: Array<Produto>){
+    constructor(servicos: Array<Servico>){
         super();
-        this.produtos = produtos;
+        this.servicos = servicos;
         this.entrada = new Entrada();
     }
 
     public excluir(): void {
-        console.log('\n Início de exclusão do produto');
-        let indice = this.entrada.receberNumero('Por favor informe o índice do produto a ser editado: ');
-        let confirmacao = this.entrada.receberNumero(`Tem certeza em excluir o produto ${this.produtos[indice].nome}?
+        console.log('\n Início de exclusão do servico');
+        let indice = this.entrada.receberNumero('Por favor informe o índice do serviço a ser editado: ');
+        let confirmacao = this.entrada.receberNumero(`Tem certeza em excluir o serviço ${this.servicos[indice].nome}?
         1 - Sim
         2 - Não 
         Resposta: `);
         do {
             switch(confirmacao){
                 case 1:
-                    delete this.produtos[indice];
-                    console.log('Produto excluído.');
+                    delete this.servicos[indice];
+                    console.log('Serviço excluído.');
                     break;
                 case 2:
                     console.log('Exclusão cancelada.');
