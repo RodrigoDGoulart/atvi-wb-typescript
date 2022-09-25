@@ -41,4 +41,12 @@ export default class Cliente {
     public get getServicosConsumidos(): Array<Servico> {
         return this.servicosConsumidos
     }
+
+    public addProdutoConsumido(produto: Produto):void{
+        this.produtosConsumidos.push(produto)
+    }
+
+    public addServicoConsumido(servico: Servico):void{
+        this.produtosConsumidos.push(servico)
+    }
 }
