@@ -13,11 +13,21 @@ export default class EdicaoProduto extends Edicao {
     }
 
     public editar(): void {
-        console.log('\n Início de edição do cliente');
-        let indice = this.entrada.receberNumero('Por favor informe o índice do cliente a ser editado: ');
-        let nome = this.entrada.receberTexto(`Por favor informe o nome do cliente (Antes era ${this.produtos[indice].nome}): `)
-        let produto = new Produto(nome);
-        this.produtos[indice] = produto;
+        console.log('\n Início de edição do produto');
+        let antigoProduto = undefined
+        while (antigoProduto == undefined) {
+            let codigo = this.entrada.receberNumero('Por favor informe o código do produto a ser editado: ');
+            antigoProduto = this.produtos.find(produto => produto.cod == codigo);
+
+            if (antigoProduto != undefined) {
+                break;
+            }
+            console.log('Produto não encontrado');
+        }
+        let nome = this.entrada.receberTexto(`Por favor informe o nome do produto (Antes era ${antigoProduto.nome}): `);
+        let novoProduto = new Produto(nome, antigoProduto.cod);
+        let indice = this.produtos.findIndex(produto => antigoProduto.cod == produto.cod);
+        this.produtos[indice] = novoProduto;
         console.log('Produto alterado');
     }
 }

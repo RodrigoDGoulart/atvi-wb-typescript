@@ -6,7 +6,6 @@ import EdicaoCliente from "../processo/cliente/edicaoCliente";
 import ExclusaoCliente from "../processo/cliente/exclusaoCliente";
 import ListagemClientes from "../processo/cliente/listagemClientes";
 import ListarConsumo from "../processo/cliente/listarConsumo";
-import CadastroProduto from "../processo/produto/cadastroProduto";
 
 export default class MainClientes {
     private empresa: Empresa

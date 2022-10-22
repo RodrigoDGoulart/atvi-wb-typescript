@@ -1,0 +1,36 @@
+{
+    "clientes":[
+        {
+            "nome":"Fulano",
+            "nomeSocial":"Fulano",
+            "cpf":{
+                "valor":"1234",
+                "dataEmissao": "01/01/2001"
+            },
+            "produtosConsumidos":[],
+            "servicosConsumidos":[]
+        },
+        {
+            "nome":"Fulanilson",
+            "nomeSocial":"Fulanilson",
+            "cpf":{
+                "valor":"4444",
+                "dataEmissao": "02/02/2003"
+            },
+            "produtosConsumidos":[],
+            "servicosConsumidos":[]
+        }
+    ],
+    "produtos":[
+        {
+            "cod":"0",
+            "nome":"Produto 1"
+        }
+    ],
+    "servicos":[
+        {
+            "cod":"0",
+            "nome":"Serviço 1"
+        }
+    ]
+}

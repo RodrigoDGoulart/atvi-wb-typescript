@@ -14,15 +14,23 @@ export default class ExclusaoProduto extends Exclusao {
 
     public excluir(): void {
         console.log('\n Início de exclusão do produto');
-        let indice = this.entrada.receberNumero('Por favor informe o índice do produto a ser editado: ');
-        let confirmacao = this.entrada.receberNumero(`Tem certeza em excluir o produto ${this.produtos[indice].nome}?
+        let produto = undefined;
+        while (produto == undefined) {
+            let cod = this.entrada.receberNumero('Por favor informe o código do produto a ser editado: ');
+            produto = this.produtos.find(p => p.cod == cod);
+            if (produto != undefined) {
+                break;
+            }
+            console.log('Produto não encontrado');
+        }
+        let confirmacao = this.entrada.receberNumero(`Tem certeza em excluir o produto ${produto.nome}?
         1 - Sim
         2 - Não 
         Resposta: `);
         do {
             switch(confirmacao){
                 case 1:
-                    delete this.produtos[indice];
+                    delete this.produtos[this.produtos.indexOf(produto)];
                     console.log('Produto excluído.');
                     break;
                 case 2:

@@ -1,18 +1,39 @@
 import Entrada from "../io/entrada";
+import Cliente from "../modelo/cliente";
+import CPF from "../modelo/cpf";
 import Empresa from "../modelo/empresa"
+import Produto from "../modelo/produto";
+import Servico from "../modelo/servico";
 import MainClientes from "./mainClientes";
 import MainProdutos from "./mainProdutos";
+import MainRelatorio from "./mainRelatorio";
 import MainServicos from "./mainServicos";
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
 let empresa = new Empresa()
 let execucao = true
 
+const bd = require('../../bd.json');
+bd.clientes.forEach(cliente => {
+    let novoCpf = new CPF(cliente.cpf.valor, cliente.cpf.dataEmissao);
+    let novoCliente = new Cliente(cliente.nome, cliente.nomeSocial, novoCpf);
+    empresa.getClientes.push(novoCliente);
+});
+bd.produtos.forEach(produto => {
+    let novoProduto = new Produto(produto.nome, produto.cod);
+    empresa.getProdutos.push(novoProduto);
+});
+bd.servicos.forEach(servico => {
+    let novoServico = new Servico(servico.nome, servico.cod);
+    empresa.getServicos.push(novoServico);
+});
+
 while (execucao) {
     console.log(`Opções:`);
     console.log(`1 - Seção cliente`);
     console.log('2 - Seção produto');
     console.log('3 - Seção serviço');
+    console.log('4 - Seção relatório');
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -30,6 +51,10 @@ while (execucao) {
         case 3:
             let mainServicos = new MainServicos(empresa);
             mainServicos.rodar();
+            break;
+        case 4:
+            let mainRelatorio = new MainRelatorio(empresa);
+            mainRelatorio.rodar();
             break;
         case 0:
             execucao = false

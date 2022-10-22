@@ -14,10 +14,20 @@ export default class EdicaoServico extends Edicao {
 
     public editar(): void {
         console.log('\n Início de edição do serviço');
-        let indice = this.entrada.receberNumero('Por favor informe o índice do serviço a ser editado: ');
-        let nome = this.entrada.receberTexto(`Por favor informe o nome do serviço (Antes era ${this.servicos[indice].nome}): `)
-        let servico = new Servico(nome);
-        this.servicos[indice] = servico;
+        let antigoServico = undefined
+        while (antigoServico == undefined) {
+            let codigo = this.entrada.receberNumero('Por favor informe o código do serviço a ser editado: ');
+            antigoServico = this.servicos.find(s => s.cod == codigo);
+
+            if (antigoServico != undefined) {
+                break;
+            }
+            console.log('Serviço não encontrado');
+        }
+        let nome = this.entrada.receberTexto(`Por favor informe o nome do serviço (Antes era ${antigoServico.nome}): `);
+        let novoServico = new Servico(nome, antigoServico.cod);
+        let indice = this.servicos.findIndex(s => antigoServico.cod == s.cod);
+        this.servicos[indice] = novoServico;
         console.log('Serviço alterado');
     }
 }
