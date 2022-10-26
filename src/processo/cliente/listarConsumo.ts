@@ -24,26 +24,14 @@ export default class ListarConsumo extends Listagem {
                 this.invalido = true;
             }
         } while (this.invalido);
-        do {
-            this.invalido = false;
-            let opcao = this.entrada.receberNumero('Listar consumo de produtos ou de serviços?\n1 - Produtos\n2 - Serviços\n');
-            switch(opcao){
-                case 1:
-                    console.log(`Consumo de produtos do cliente ${this.cliente.nome}`)
-                    this.cliente.getProdutosConsumidos.forEach(produto => {
-                        console.log(`- ${produto.nome}`);
-                    });
-                    break;
-                case 2:
-                    console.log(`Consumo de serviço do cliente ${this.cliente.nome}`)
-                    this.cliente.getServicosConsumidos.forEach(servico => {
-                        console.log(`- ${servico.nome}`);
-                    });
-                    break;
-                default:
-                    console.log('Comando não compreendido')
-                    this.invalido = true;
-            }
-        } while(this.invalido)
+        console.log(`\nLista de consumo do cliente ${this.cliente.nome}:\nProdutos --------------------------------------------`);
+        this.cliente.getProdutosConsumidos.forEach(p => {
+            console.log(`> ${p.nome} - cod.: ${p.cod}`);
+        });
+        console.log('Serviços --------------------------------------------');
+        this.cliente.getServicosConsumidos.forEach(s => {
+            console.log(`> ${s.nome} - cod.: ${s.cod}`);
+        });
+        console.log('-----------------------------------------------------')
     }
 }

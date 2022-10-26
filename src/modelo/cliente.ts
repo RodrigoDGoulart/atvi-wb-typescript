@@ -47,6 +47,6 @@ export default class Cliente {
     }
 
     public addServicoConsumido(servico: Servico):void{
-        this.produtosConsumidos.push(servico)
+        this.servicosConsumidos.push(servico)
     }
 }
