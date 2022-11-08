@@ -7,8 +7,46 @@
                 "valor":"1234",
                 "dataEmissao": "01/01/2001"
             },
-            "produtosConsumidos":[],
-            "servicosConsumidos":[]
+            "produtosConsumidos":[
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                }
+            ],
+            "servicosConsumidos":[
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                }
+            ]
         },
         {
             "nome":"Fulanilson",
@@ -17,8 +55,98 @@
                 "valor":"4444",
                 "dataEmissao": "02/02/2003"
             },
-            "produtosConsumidos":[],
-            "servicosConsumidos":[]
+            "produtosConsumidos":[
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                }
+            ],
+            "servicosConsumidos":[
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                }
+            ]
         }
     ],
     "produtos":[

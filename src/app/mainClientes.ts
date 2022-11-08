@@ -5,6 +5,7 @@ import CadastroConsumo from "../processo/cliente/cadastroConsumo";
 import EdicaoCliente from "../processo/cliente/edicaoCliente";
 import ExclusaoCliente from "../processo/cliente/exclusaoCliente";
 import ListagemClientes from "../processo/cliente/listagemClientes";
+import ListagemRelatorio from "../processo/cliente/listagemRelatorio";
 import ListarConsumo from "../processo/cliente/listarConsumo";
 
 export default class MainClientes {
@@ -24,7 +25,8 @@ export default class MainClientes {
             console.log('3 - Editar cliente');
             console.log('4 - Excluir cliente');
             console.log('5 - Cadastrar Consumo');
-            console.log('6 - Listar consumo de cliente')
+            console.log('6 - Listar consumo de cliente');
+            console.log('7 - Listagem relatório de cliente');
             console.log('0 - Voltar');
 
             let entrada = new Entrada();
@@ -54,6 +56,10 @@ export default class MainClientes {
                 case 6:
                     let listarConsumo = new ListarConsumo(this.empresa.getClientes);
                     listarConsumo.listar();
+                    break;
+                case 7:
+                    let listagemRelatorio = new ListagemRelatorio(this.empresa.getClientes);
+                    listagemRelatorio.listar();
                     break;
                 case 0:
                     this.running = false;
