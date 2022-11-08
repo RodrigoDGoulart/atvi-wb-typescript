@@ -6,7 +6,6 @@ import Produto from "../modelo/produto";
 import Servico from "../modelo/servico";
 import MainClientes from "./mainClientes";
 import MainProdutos from "./mainProdutos";
-import MainRelatorio from "./mainRelatorio";
 import MainServicos from "./mainServicos";
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
@@ -16,7 +15,7 @@ let execucao = true
 const bd = require('../../bd.json');
 bd.clientes.forEach(cliente => {
     let novoCpf = new CPF(cliente.cpf.valor, cliente.cpf.dataEmissao);
-    let novoCliente = new Cliente(cliente.nome, cliente.nomeSocial, novoCpf);
+    let novoCliente = new Cliente(cliente.nome, cliente.nomeSocial, novoCpf, cliente.genero);
     cliente.produtosConsumidos.forEach(produto => {
         novoCliente.addProdutoConsumido(new Produto(produto.nome, produto.cod))
     })

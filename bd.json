@@ -7,6 +7,7 @@
                 "valor":"1234",
                 "dataEmissao": "01/01/2001"
             },
+            "genero": "M",
             "produtosConsumidos":[
                 {
                     "cod":"0",
@@ -49,12 +50,13 @@
             ]
         },
         {
-            "nome":"Fulanilson",
-            "nomeSocial":"Fulanilson",
+            "nome":"Fulana",
+            "nomeSocial":"Fulana",
             "cpf":{
                 "valor":"4444",
                 "dataEmissao": "02/02/2003"
             },
+            "genero": "F",
             "produtosConsumidos":[
                 {
                     "cod":"0",
@@ -106,6 +108,83 @@
                     "cod":"0",
                     "nome":"Serviço 1"
                 },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1"
+                }
+            ]
+        },
+        {
+            "nome":"Fulane",
+            "nomeSocial":"Fulane",
+            "cpf":{
+                "valor":"4444",
+                "dataEmissao": "02/02/2003"
+            },
+            "genero": "O",
+            "produtosConsumidos":[
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                },
+                {
+                    "cod":"0",
+                    "nome":"Produto 1"
+                }
+            ],
+            "servicosConsumidos":[
                 {
                     "cod":"0",
                     "nome":"Serviço 1"
