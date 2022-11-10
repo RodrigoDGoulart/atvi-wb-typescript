@@ -3,6 +3,7 @@ import Empresa from "../modelo/empresa";
 import Relatorio1 from "../processo/relatorio/relatorio-1";
 import Relatorio2 from "../processo/relatorio/relatorio-2";
 import Relatorio3 from "../processo/relatorio/relatorio-3";
+import Relatorio4 from "../processo/relatorio/relatorio-4";
 import Relatorio5 from "../processo/relatorio/relatorio-5";
 
 export default class MainRelatorio {
@@ -38,7 +39,7 @@ export default class MainRelatorio {
                     new Relatorio3(this.empresa).listar();
                     break;
                 case 4:
-                    // codigo
+                    new Relatorio4(this.empresa).listar();
                     break;
                 case 5:    
                     new Relatorio5(this.empresa).listar();
