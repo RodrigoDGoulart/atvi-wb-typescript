@@ -2,10 +2,7 @@ import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import Relatorio1 from "../processo/relatorio/relatorio-1";
 import Relatorio2 from "../processo/relatorio/relatorio-2";
-import CadastroServico from "../processo/servico/cadastroServico";
-import EdicaoServico from "../processo/servico/edicaoServico";
-import ExclusaoServico from "../processo/servico/exclusaoServico";
-import ListagemServicos from "../processo/servico/listagemServico";
+import Relatorio3 from "../processo/relatorio/relatorio-3";
 
 export default class MainRelatorio {
     private empresa: Empresa
@@ -37,7 +34,7 @@ export default class MainRelatorio {
                     new Relatorio2(this.empresa).listar();
                     break;
                 case 3:
-                    // codigo
+                    new Relatorio3(this.empresa).listar();
                     break;
                 case 4:
                     // codigo

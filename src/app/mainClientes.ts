@@ -5,7 +5,6 @@ import CadastroConsumo from "../processo/cliente/cadastroConsumo";
 import EdicaoCliente from "../processo/cliente/edicaoCliente";
 import ExclusaoCliente from "../processo/cliente/exclusaoCliente";
 import ListagemClientes from "../processo/cliente/listagemClientes";
-import ListagemRelatorio from "../processo/relatorio/listagemRelatorio";
 import ListarConsumo from "../processo/cliente/listarConsumo";
 
 export default class MainClientes {
@@ -55,10 +54,6 @@ export default class MainClientes {
                 case 6:
                     let listarConsumo = new ListarConsumo(this.empresa.getClientes);
                     listarConsumo.listar();
-                    break;
-                case 7:
-                    let listagemRelatorio = new ListagemRelatorio(this.empresa.getClientes);
-                    listagemRelatorio.listar();
                     break;
                 case 0:
                     this.running = false;

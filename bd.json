@@ -233,12 +233,22 @@
             "cod": "0",
             "nome":"Produto 1",
             "consumido": 0
+        },
+        {
+            "cod": "12",
+            "nome":"Produto 2",
+            "consumido": 0
         }
     ],
     "servicos":[
         {
             "cod":"0",
             "nome":"Serviço 1",
+            "consumido": 0
+        },
+        {
+            "cod":"23",
+            "nome":"Serviço 2",
             "consumido": 0
         }
     ]
