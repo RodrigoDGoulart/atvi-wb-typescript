@@ -230,14 +230,16 @@
     ],
     "produtos":[
         {
-            "cod":"0",
-            "nome":"Produto 1"
+            "cod": "0",
+            "nome":"Produto 1",
+            "consumido": 0
         }
     ],
     "servicos":[
         {
             "cod":"0",
-            "nome":"Serviço 1"
+            "nome":"Serviço 1",
+            "consumido": 0
         }
     ]
 }
