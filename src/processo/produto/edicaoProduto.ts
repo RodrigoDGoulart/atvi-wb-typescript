@@ -25,7 +25,8 @@ export default class EdicaoProduto extends Edicao {
             console.log('Produto não encontrado');
         }
         let nome = this.entrada.receberTexto(`Por favor informe o nome do produto (Antes era ${antigoProduto.nome}): `);
-        let novoProduto = new Produto(nome, antigoProduto.cod);
+        let valor = this.entrada.receberNumero(`Por favor informe o valor do produto (Antes era R$${antigoProduto.valor}`)
+        let novoProduto = new Produto(nome, antigoProduto.cod, valor);
         let indice = this.produtos.findIndex(produto => antigoProduto.cod == produto.cod);
         this.produtos[indice] = novoProduto;
         console.log('Produto alterado');

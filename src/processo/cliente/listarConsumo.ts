@@ -26,11 +26,11 @@ export default class ListarConsumo extends Listagem {
         } while (this.invalido);
         console.log(`\nLista de consumo do cliente ${this.cliente.nome}:\nProdutos --------------------------------------------`);
         this.cliente.getProdutosConsumidos.forEach(p => {
-            console.log(`> ${p.nome} - cod.: ${p.cod}`);
+            console.log(`> ${p.nome} - cod.: ${p.cod} - valor: ${p.valor}`);
         });
         console.log('Serviços --------------------------------------------');
         this.cliente.getServicosConsumidos.forEach(s => {
-            console.log(`> ${s.nome} - cod.: ${s.cod}`);
+            console.log(`> ${s.nome} - cod.: ${s.cod} - valor: ${s.valor}`);
         });
         console.log('-----------------------------------------------------')
     }

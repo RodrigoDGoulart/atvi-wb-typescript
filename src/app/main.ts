@@ -15,23 +15,23 @@ let execucao = true
 
 const bd = require('../../bd.json');
 bd.produtos.forEach(produto => {
-    let novoProduto = new Produto(produto.nome, produto.cod);
+    let novoProduto = new Produto(produto.nome, produto.cod, produto.valor);
     empresa.getProdutos.push(novoProduto);
 });
 bd.servicos.forEach(servico => {
-    let novoServico = new Servico(servico.nome, servico.cod);
+    let novoServico = new Servico(servico.nome, servico.cod, servico.valor);
     empresa.getServicos.push(novoServico);
 });
 bd.clientes.forEach(cliente => {
     let novoCpf = new CPF(cliente.cpf.valor, cliente.cpf.dataEmissao);
     let novoCliente = new Cliente(cliente.nome, cliente.nomeSocial, novoCpf, cliente.genero);
     cliente.produtosConsumidos.forEach(produto => {
-        novoCliente.addProdutoConsumido(new Produto(produto.nome, produto.cod));
+        novoCliente.addProdutoConsumido(new Produto(produto.nome, produto.cod, produto.valor));
         let produtoEncontrado = empresa.getProdutos.find(p => p.cod === produto.cod);
         produtoEncontrado.addConsumo();
     });
     cliente.servicosConsumidos.forEach(servico => {
-        novoCliente.addServicoConsumido(new Servico(servico.nome, servico.cod));
+        novoCliente.addServicoConsumido(new Servico(servico.nome, servico.cod, servico.valor));
         let servicoEncontrado = empresa.getServicos.find(s => s.cod === servico.cod);
         servicoEncontrado.addConsumo();
     });

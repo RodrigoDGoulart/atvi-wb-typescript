@@ -1,5 +1,6 @@
 import Empresa from "../../modelo/empresa";
 import Produto from "../../modelo/produto";
+import Servico from "../../modelo/servico";
 import Listagem from "../listagem";
 
 export default class Relatorio4 extends Listagem {
@@ -24,7 +25,7 @@ export default class Relatorio4 extends Listagem {
     private registrarItens = () => {
         this.empresa.getClientes.forEach(cliente => {
             cliente.getProdutosConsumidos.forEach(p => {
-                let produto = new Produto(p.nome, p.cod);
+                let produto = new Produto(p.nome, p.cod, p.valor);
                 switch(cliente.getGeneroChar()){
                     case 'F':
                         if (this.listaProduto.listaFem.length == 0) {
@@ -76,7 +77,7 @@ export default class Relatorio4 extends Listagem {
                 }
             });
             cliente.getServicosConsumidos.forEach(s => {
-                let servico = new Produto(s.nome, s.cod);
+                let servico = new Servico(s.nome, s.cod, s.valor);
                 switch(cliente.getGeneroChar()){
                     case 'F':
                         if (this.listaServico.listaFem.length == 0) {

@@ -25,7 +25,8 @@ export default class EdicaoServico extends Edicao {
             console.log('Serviço não encontrado');
         }
         let nome = this.entrada.receberTexto(`Por favor informe o nome do serviço (Antes era ${antigoServico.nome}): `);
-        let novoServico = new Servico(nome, antigoServico.cod);
+        let valor = this.entrada.receberNumero(`Por favor informe o vaor do serviço (Antes era ${antigoServico.valor})`);
+        let novoServico = new Servico(nome, antigoServico.cod, valor);
         let indice = this.servicos.findIndex(s => antigoServico.cod == s.cod);
         this.servicos[indice] = novoServico;
         console.log('Serviço alterado');

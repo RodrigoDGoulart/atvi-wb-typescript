@@ -9,44 +9,8 @@
             },
             "genero": "M",
             "produtosConsumidos":[
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                }
             ],
             "servicosConsumidos":[
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                }
             ]
         },
         {
@@ -57,98 +21,8 @@
                 "dataEmissao": "02/02/2003"
             },
             "genero": "F",
-            "produtosConsumidos":[
-                {
-                    "cod":"12",
-                    "nome":"Produto 2"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                }
-            ],
-            "servicosConsumidos":[
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                }
-            ]
+            "produtosConsumidos":[],
+            "servicosConsumidos":[]
         },
         {
             "nome":"Fulane",
@@ -158,85 +32,21 @@
                 "dataEmissao": "02/02/2003"
             },
             "genero": "O",
-            "produtosConsumidos":[
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Produto 1"
-                }
-            ],
-            "servicosConsumidos":[
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1"
-                }
-            ]
+            "produtosConsumidos":[],
+            "servicosConsumidos":[]
         }
     ],
     "produtos":[
         {
             "cod": "0",
             "nome":"Produto 1",
+            "valor":15.99,
             "consumido": 0
         },
         {
             "cod": "12",
             "nome":"Produto 2",
+            "valor": 12.29,
             "consumido": 0
         }
     ],
@@ -244,11 +54,13 @@
         {
             "cod":"0",
             "nome":"Serviço 1",
+            "valor":29.99,
             "consumido": 0
         },
         {
             "cod":"23",
             "nome":"Serviço 2",
+            "valor":49.99,
             "consumido": 0
         }
     ]
