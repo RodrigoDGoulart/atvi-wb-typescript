@@ -1,5 +1,4 @@
 import Entrada from "../../io/entrada";
-import Cliente from "../../modelo/cliente";
 import Empresa from "../../modelo/empresa";
 import Listagem from "../listagem";
 
