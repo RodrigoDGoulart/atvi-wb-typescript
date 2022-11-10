@@ -21,8 +21,9 @@ export default class MainRelatorio {
             console.log(`1 - 10 clientes que MAIS consumiram produtos ou serviços em quantidade`);
             console.log(`2 - Listagem de clientes por gênero (Feminino - Masculino - Outro)`);
             console.log('3 - Serviços ou produtos mais consumidos');
-            console.log('4 - 10 clientes que MENOS consumiram produtos ou serviços em QUANTIDADE');
-            console.log('5 - 5 clientes que MAIS consumiram em VALOR')
+            console.log('4 - Serviços e produtos mais consumidos por gênero');
+            console.log('5 - 10 clientes que MENOS consumiram produtos ou serviços em QUANTIDADE');
+            console.log('6 - 5 clientes que MAIS consumiram em VALOR');
             console.log('0 - Voltar');
 
             let entrada = new Entrada();
