@@ -1,5 +1,6 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
+import AdicaoTelefone from "../processo/cliente/adicaoTelefone";
 import CadastroCliente from "../processo/cliente/cadastroCliente";
 import CadastroConsumo from "../processo/cliente/cadastroConsumo";
 import EdicaoCliente from "../processo/cliente/edicaoCliente";
@@ -25,6 +26,8 @@ export default class MainClientes {
             console.log('4 - Excluir cliente');
             console.log('5 - Cadastrar Consumo');
             console.log('6 - Listar consumo de cliente');
+            console.log('7 - Adicionar RG à cliente já cadastrado');
+            console.log('8 - Adicionar telefone à cliente já cadastrado');
             console.log('0 - Voltar');
 
             let entrada = new Entrada();
@@ -54,6 +57,12 @@ export default class MainClientes {
                 case 6:
                     let listarConsumo = new ListarConsumo(this.empresa.getClientes);
                     listarConsumo.listar();
+                    break;
+                case 7:
+                    // codigo
+                    break;
+                case 8:
+                    new AdicaoTelefone(this.empresa.getClientes).cadastrar();
                     break;
                 case 0:
                     this.running = false;

@@ -67,4 +67,8 @@ export default class Cliente {
     public addServicoConsumido(servico: Servico):void{
         this.servicosConsumidos.push(servico)
     }
+
+    public addTelefone(telefone: Telefone){
+        this.telefones.push(telefone);
+    }
 }

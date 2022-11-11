@@ -8,19 +8,12 @@ export default class Relatorio6 extends Listagem {
         this.empresa = empresa;
     }
     public listar(): void {
-        // ordenando clientes em ordem de consumo do maior para menor (considernaod ambos tipos de consumo)
-
         const getValorTotal = (array) => {
             let total = 0;
             array.forEach(item => {
                 total = total + item.valor
             });
             return total;
-        }
-
-        const getMaior = (produto, servico) => {
-            if (produto > servico) return produto
-            return servico
         }
 
         let lista = this.empresa.getClientes
