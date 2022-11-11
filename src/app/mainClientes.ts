@@ -8,6 +8,7 @@ import ExclusaoCliente from "../processo/cliente/exclusaoCliente";
 import ListagemClientes from "../processo/cliente/listagemClientes";
 import ListarConsumo from "../processo/cliente/listarConsumo";
 import MainTelefone from "./mainTelefone";
+import MainRG from "./mainRg";
 
 export default class MainClientes {
     private empresa: Empresa
@@ -60,7 +61,7 @@ export default class MainClientes {
                     listarConsumo.listar();
                     break;
                 case 7:
-                    // codigo
+                    new MainRG(this.empresa).rodar();
                     break;
                 case 8:
                     new MainTelefone(this.empresa).rodar();

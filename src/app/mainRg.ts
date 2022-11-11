@@ -1,7 +1,7 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 
-export default class MainTelefone {
+export default class MainRG {
     private empresa: Empresa
     private running: boolean;
 
