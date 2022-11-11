@@ -71,4 +71,8 @@ export default class Cliente {
     public addTelefone(telefone: Telefone){
         this.telefones.push(telefone);
     }
+
+    public delTelefone(indice: number) {
+        this.telefones.splice(indice, 1);
+    }
 }

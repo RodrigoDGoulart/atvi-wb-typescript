@@ -1,12 +1,13 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
-import AdicaoTelefone from "../processo/cliente/adicaoTelefone";
+import AdicaoTelefone from "../processo/telefone/adicaoTelefone";
 import CadastroCliente from "../processo/cliente/cadastroCliente";
 import CadastroConsumo from "../processo/cliente/cadastroConsumo";
 import EdicaoCliente from "../processo/cliente/edicaoCliente";
 import ExclusaoCliente from "../processo/cliente/exclusaoCliente";
 import ListagemClientes from "../processo/cliente/listagemClientes";
 import ListarConsumo from "../processo/cliente/listarConsumo";
+import MainTelefone from "./mainTelefone";
 
 export default class MainClientes {
     private empresa: Empresa
@@ -26,8 +27,8 @@ export default class MainClientes {
             console.log('4 - Excluir cliente');
             console.log('5 - Cadastrar Consumo');
             console.log('6 - Listar consumo de cliente');
-            console.log('7 - Adicionar RG à cliente já cadastrado');
-            console.log('8 - Adicionar telefone à cliente já cadastrado');
+            console.log('7 - Seção RG');
+            console.log('8 - Seção telefone');
             console.log('0 - Voltar');
 
             let entrada = new Entrada();
@@ -62,7 +63,7 @@ export default class MainClientes {
                     // codigo
                     break;
                 case 8:
-                    new AdicaoTelefone(this.empresa.getClientes).cadastrar();
+                    new MainTelefone(this.empresa).rodar();
                     break;
                 case 0:
                     this.running = false;

@@ -2,7 +2,7 @@ import Entrada from "../../io/entrada";
 import Cliente from "../../modelo/cliente";
 import Telefone from "../../modelo/telefone";
 import Cadastro from "../cadastro";
-import ListagemClienteIndice from "./listagemClienteIndice";
+import ListagemClienteIndice from "../cliente/listagemClienteIndice";
 
 export default class AdicaoTelefone extends Cadastro {
     private clientes: Array<Cliente>
