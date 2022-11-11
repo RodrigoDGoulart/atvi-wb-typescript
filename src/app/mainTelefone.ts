@@ -1,6 +1,7 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import AdicaoTelefone from "../processo/telefone/adicaoTelefone";
+import EdicaoTelefone from "../processo/telefone/edicaoTelefone";
 import RemocaoTelefone from "../processo/telefone/remocaoTelefone";
 
 export default class MainTelefone {
@@ -31,7 +32,7 @@ export default class MainTelefone {
                     new RemocaoTelefone(this.empresa.getClientes).excluir();
                     break;
                 case 3:
-                    // codigo
+                    new EdicaoTelefone(this.empresa.getClientes).editar();
                     break;
                 case 0:
                     this.running = false;
