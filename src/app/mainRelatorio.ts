@@ -5,6 +5,7 @@ import Relatorio2 from "../processo/relatorio/relatorio-2";
 import Relatorio3 from "../processo/relatorio/relatorio-3";
 import Relatorio4 from "../processo/relatorio/relatorio-4";
 import Relatorio5 from "../processo/relatorio/relatorio-5";
+import Relatorio6 from "../processo/relatorio/relatorio-6";
 
 export default class MainRelatorio {
     private empresa: Empresa
@@ -46,7 +47,7 @@ export default class MainRelatorio {
                     new Relatorio5(this.empresa).listar();
                     break;
                 case 6:
-                    // codigo
+                    new Relatorio6(this.empresa).listar();
                     break;
                 case 0:
                     console.log('\n');

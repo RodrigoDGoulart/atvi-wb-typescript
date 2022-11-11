@@ -26,7 +26,7 @@ export default class Relatorio3 extends Listagem {
 
     private listarServicos = () => {
         let lista = this.empresa.getServicos.sort((s1, s2) => {
-            if (s1.consumo <s2.consumo) return -1
+            if (s1.consumo > s2.consumo) return -1
             else return 1
         });
         console.log('\nListagem geral dos serviços mais consumidos')

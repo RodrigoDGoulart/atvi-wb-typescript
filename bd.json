@@ -9,8 +9,37 @@
             },
             "genero": "M",
             "produtosConsumidos":[
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                }
             ],
             "servicosConsumidos":[
+                {
+                    "cod":"23",
+                    "nome":"Serviço 2",
+                    "valor":49.99,
+                    "consumido": 0
+                },{
+                    "cod":"23",
+                    "nome":"Serviço 2",
+                    "valor":49.99,
+                    "consumido": 0
+                }
             ]
         },
         {
@@ -21,8 +50,58 @@
                 "dataEmissao": "02/02/2003"
             },
             "genero": "F",
-            "produtosConsumidos":[],
-            "servicosConsumidos":[]
+            "produtosConsumidos":[
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                }
+            ],
+            "servicosConsumidos":[
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1",
+                    "valor":29.99,
+                    "consumido": 0
+                },
+                {
+                    "cod":"23",
+                    "nome":"Serviço 2",
+                    "valor":49.99,
+                    "consumido": 0
+                }
+            ]
         },
         {
             "nome":"Fulane",
@@ -32,8 +111,46 @@
                 "dataEmissao": "02/02/2003"
             },
             "genero": "O",
-            "produtosConsumidos":[],
-            "servicosConsumidos":[]
+            "produtosConsumidos":[
+                {
+                    "cod": "0",
+                    "nome":"Produto 1",
+                    "valor":15.99,
+                    "consumido": 0
+                },
+                {
+                    "cod": "12",
+                    "nome":"Produto 2",
+                    "valor": 12.29,
+                    "consumido": 0
+                }
+            ],
+            "servicosConsumidos":[
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1",
+                    "valor":29.99,
+                    "consumido": 0
+                },
+                {
+                    "cod":"23",
+                    "nome":"Serviço 2",
+                    "valor":49.99,
+                    "consumido": 0
+                },
+                {
+                    "cod":"0",
+                    "nome":"Serviço 1",
+                    "valor":29.99,
+                    "consumido": 0
+                },
+                {
+                    "cod":"23",
+                    "nome":"Serviço 2",
+                    "valor":49.99,
+                    "consumido": 0
+                }
+            ]
         }
     ],
     "produtos":[
