@@ -15,6 +15,14 @@ export default class ListagemClientes extends Listagem {
             console.log(`Nome: ` + cliente.nome);
             console.log(`Nome social: ` + cliente.nomeSocial);
             console.log(`CPF: ` + cliente.getCpf.getValor);
+            console.log('Telefones: ')
+            if (cliente.getTelefones.length === 0) {
+                console.log('Cliente não possui nenhum telefone cadastrado')
+            } else {
+                cliente.getTelefones.forEach((tel, indice) => {
+                    console.log(`${indice} - (${tel.getDdd}) ${tel.getNumero}`);
+                });
+            }
             console.log(`--------------------------------------`);
         });
         console.log(`\n`);
