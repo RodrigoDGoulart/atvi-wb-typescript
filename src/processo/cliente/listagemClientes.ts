@@ -23,6 +23,14 @@ export default class ListagemClientes extends Listagem {
                     console.log(`${indice} - (${tel.getDdd}) ${tel.getNumero}`);
                 });
             }
+            console.log('Rgs: ')
+            if (cliente.getRgs.length === 0) {
+                console.log('Cliente não possui nenhum RG cadastrado')
+            } else {
+                cliente.getRgs.forEach((rg, indice) => {
+                    console.log(`${indice} - Valor: ${rg.getValor}\nData de emissão: ${rg.getDataEmissao.toLocaleDateString('pt-br')}`);
+                });
+            }
             console.log(`--------------------------------------`);
         });
         console.log(`\n`);
