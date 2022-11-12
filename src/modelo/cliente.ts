@@ -75,4 +75,8 @@ export default class Cliente {
     public delTelefone(indice: number) {
         this.telefones.splice(indice, 1);
     }
+
+    public addRg(rg: RG){
+        this.rgs.push(rg);
+    }
 }

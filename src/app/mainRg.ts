@@ -1,5 +1,6 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
+import AdicaoRG from "../processo/rg/adicaoRG";
 
 export default class MainRG {
     private empresa: Empresa
@@ -23,7 +24,7 @@ export default class MainRG {
 
             switch (opcao) {
                 case 1:
-                    // codigo
+                    new AdicaoRG(this.empresa.getClientes).cadastrar();
                     break;
                 case 2:
                     // codigo
