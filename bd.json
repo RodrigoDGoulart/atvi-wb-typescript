@@ -9,37 +9,8 @@
             },
             "genero": "M",
             "produtosConsumidos":[
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                }
             ],
             "servicosConsumidos":[
-                {
-                    "cod":"23",
-                    "nome":"Serviço 2",
-                    "valor":49.99,
-                    "consumido": 0
-                },{
-                    "cod":"23",
-                    "nome":"Serviço 2",
-                    "valor":49.99,
-                    "consumido": 0
-                }
             ]
         },
         {
@@ -51,56 +22,8 @@
             },
             "genero": "F",
             "produtosConsumidos":[
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                }
             ],
             "servicosConsumidos":[
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1",
-                    "valor":29.99,
-                    "consumido": 0
-                },
-                {
-                    "cod":"23",
-                    "nome":"Serviço 2",
-                    "valor":49.99,
-                    "consumido": 0
-                }
             ]
         },
         {
@@ -112,56 +35,22 @@
             },
             "genero": "O",
             "produtosConsumidos":[
-                {
-                    "cod": "0",
-                    "nome":"Produto 1",
-                    "valor":15.99,
-                    "consumido": 0
-                },
-                {
-                    "cod": "12",
-                    "nome":"Produto 2",
-                    "valor": 12.29,
-                    "consumido": 0
-                }
+                
             ],
             "servicosConsumidos":[
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1",
-                    "valor":29.99,
-                    "consumido": 0
-                },
-                {
-                    "cod":"23",
-                    "nome":"Serviço 2",
-                    "valor":49.99,
-                    "consumido": 0
-                },
-                {
-                    "cod":"0",
-                    "nome":"Serviço 1",
-                    "valor":29.99,
-                    "consumido": 0
-                },
-                {
-                    "cod":"23",
-                    "nome":"Serviço 2",
-                    "valor":49.99,
-                    "consumido": 0
-                }
+                
             ]
         }
     ],
     "produtos":[
         {
-            "cod": "0",
+            "cod": 0,
             "nome":"Produto 1",
             "valor":15.99,
             "consumido": 0
         },
         {
-            "cod": "12",
+            "cod": 12,
             "nome":"Produto 2",
             "valor": 12.29,
             "consumido": 0
@@ -169,13 +58,13 @@
     ],
     "servicos":[
         {
-            "cod":"0",
+            "cod":0,
             "nome":"Serviço 1",
             "valor":29.99,
             "consumido": 0
         },
         {
-            "cod":"23",
+            "cod":23,
             "nome":"Serviço 2",
             "valor":49.99,
             "consumido": 0

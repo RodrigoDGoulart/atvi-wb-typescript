@@ -1,16 +1,17 @@
-import { type } from "os";
 import Entrada from "../../io/entrada";
 import Cliente from "../../modelo/cliente";
 import Empresa from "../../modelo/empresa";
 import Produto from "../../modelo/produto";
+import Servico from "../../modelo/servico";
 import Cadastro from "../cadastro";
-
+import ListagemProdutoCod from "../produto/listagemProdutoCod";
+import ListagemServicoCod from "../servico/listagemServicoCod";
+import ListagemClienteIndice from "./listagemClienteIndice";
 
 export default class CadastroConsumo extends Cadastro {
-
     private empresa: Empresa;
     private entrada: Entrada;
-    private cliente!: Cliente;
+    private cliente: Cliente;
 
     constructor(empresa: Empresa) {
         super();
@@ -18,79 +19,86 @@ export default class CadastroConsumo extends Cadastro {
         this.empresa = empresa;
     }
 
-    public cadastrar(): void {
-        console.log('Ínicio de cadastro de consumo')
-        do {
-            let indice = this.entrada.receberNumero('Selecione o cliente através do índice, por favor: ');
-            this.cliente = this.empresa.getClientes[indice];
-            if (!this.cliente) {
-                console.log('Índice de cliente inválido')
-            }
-        } while (!this.cliente)
-        console.log(`Cliente ${this.cliente.nome} selecionado.`)
-        let selecionar: number;
-        let lista = undefined;
-        let item = undefined;
-        let string = undefined;
-        do {
-            selecionar = this.entrada.receberNumero('Adicionar produto ou serviço?\n 1 - Produto\n 2 - Serviço \n');
-            switch (selecionar) {
+    private cadastrarProduto = () => {
+        let listaProduto = new ListagemProdutoCod(this.empresa.getProdutos);
+        listaProduto.listar();
+        let produto = listaProduto.validar() as Produto;
+        
+        console.log(`Produto selecionado:\nNome: ${produto.nome} - Valor: R$${produto.valor} - cod.: ${produto.cod}`);
+
+        console.log(`Adicionar produto ${produto.nome} ao cliente ${this.cliente.nome}?\n1 - Sim\n2 - Não`);
+        let running = true;
+        while(running){
+            let opcao = this.entrada.receberNumero('Resposta: ');
+            switch(opcao){
                 case 1:
-                    lista = this.empresa.getProdutos
-                    string = 'Produto'
+                    this.cliente.addProdutoConsumido(produto);
+                    console.log('Adição de consumo CONCLUÍDA.');
+                    running = false;
                     break;
                 case 2:
-                    lista = this.empresa.getServicos
-                    string = 'Serviço'
+                    console.log('Adição de consumo CANCELADA.');
+                    running = false;
                     break;
                 default:
                     console.log('Comando não compreendido')
             }
-        } while (selecionar < 1 || selecionar > 2);
-        do {
-            let codigo = this.entrada.receberNumero(`Insira o código do ${string}: `)
-            item = lista.find(x => x.cod == codigo);
-            if (item == undefined){
-                console.log(`${string} não encontrado.`)
-            }
-        } while (item == undefined)
-        console.log(`${item.nome} selecionado.`)
-        let confirmacao = this.entrada.receberNumero(`Cadastrar consumo de ${item.nome} do cliente ${this.cliente.nome}?
-        1 - Sim
-        2 - Não
-        Resposta: `)
-        do {
-            switch(confirmacao){
+        }
+    }
+
+    private cadastrarServico = () => {
+        let listaServico = new ListagemServicoCod(this.empresa.getServicos);
+        listaServico.listar();
+        let servico = listaServico.validar() as Servico;
+        
+        console.log(`Serviço selecionado:\nNome: ${servico.nome} - Valor: R$${servico.valor} - cod.: ${servico.cod}`);
+
+        console.log(`Adicionar serviço ${servico.nome} ao cliente ${this.cliente.nome}?`);
+        let running = true;
+        while(running){
+            let opcao = this.entrada.receberNumero('Resposta: ');
+            switch(opcao){
                 case 1:
-                    if (string == 'Produto'){
-                        this.cliente.addProdutoConsumido(item);
-                        console.log('Produto adicionado.');
-                    } else {
-                        this.cliente.addServicoConsumido(item);
-                        console.log('Serviço adicionado.');
-                    }
+                    this.cliente.addProdutoConsumido(servico);
+                    console.log('Adição de consumo CONCLUÍDA.');
+                    running = false;
                     break;
                 case 2:
-                    console.log('Adição cancelada.');
+                    console.log('Adição de consumo CANCELADA.');
+                    running = false;
                     break;
                 default:
-                    console.log('Comando não compreendido.');
+                    console.log('Comando não compreendido')
             }
-        } while (confirmacao < 1 || confirmacao > 2);
-        let maisUm = 0;
-        do {
-            maisUm = this.entrada.receberNumero(`Adicionar novo produto ou serviço?\n1 - Sim\n2 - Não\nResposta: `);
-            switch(maisUm){
+        }
+    }
+
+    public cadastrar(): void {
+        console.log('Ínicio de cadastro de consumo');
+
+        let listaCliente = new ListagemClienteIndice(this.empresa.getClientes);
+        listaCliente.listar();
+        this.cliente = listaCliente.validar() as Cliente;
+        console.log(`Cliente ${this.cliente.nome} selecionado.`)
+        
+        console.log('Deseja cadastrar consumo de produto ou serviço?\n1 - Produto\n2 - Serviço');
+        let running = true;
+        while(running){
+            let opcao = this.entrada.receberNumero('Escolha: ');
+            switch(opcao){
                 case 1:
-                    let novoConsumo = new CadastroConsumo(this.empresa);
-                    novoConsumo.cadastrar();
+                    this.cadastrarProduto();
+                    running = false;
                     break;
                 case 2:
-                    console.log('Cadastro de consumo finalizado')
+                    this.cadastrarServico();
+                    running = false;
                     break;
                 default:
                     console.log('Comando não compreendido');
             }
-        } while (maisUm < 1 || maisUm > 2);
+        }
     }
+
+    
 }
