@@ -24,7 +24,6 @@ export default class ListagemProdutoCod extends Listagem {
         let running = true;
         while(running){
             let cod = this.entrada.receberNumero('Por favor informe o código do produto: ');
-            console.log(this.produtos)
             let produto = this.produtos.find(prod => prod.cod === cod);
             if (produto) {
                 running = false;

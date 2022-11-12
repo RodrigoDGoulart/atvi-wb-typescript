@@ -33,6 +33,7 @@ export default class CadastroConsumo extends Cadastro {
             switch(opcao){
                 case 1:
                     this.cliente.addProdutoConsumido(produto);
+                    produto.addConsumo();
                     console.log('Adição de consumo CONCLUÍDA.');
                     running = false;
                     break;
@@ -53,13 +54,14 @@ export default class CadastroConsumo extends Cadastro {
         
         console.log(`Serviço selecionado:\nNome: ${servico.nome} - Valor: R$${servico.valor} - cod.: ${servico.cod}`);
 
-        console.log(`Adicionar serviço ${servico.nome} ao cliente ${this.cliente.nome}?`);
+        console.log(`Adicionar serviço ${servico.nome} ao cliente ${this.cliente.nome}?\n1 - Sim\n2 - Não`);
         let running = true;
         while(running){
             let opcao = this.entrada.receberNumero('Resposta: ');
             switch(opcao){
                 case 1:
                     this.cliente.addProdutoConsumido(servico);
+                    servico.addConsumo();
                     console.log('Adição de consumo CONCLUÍDA.');
                     running = false;
                     break;
