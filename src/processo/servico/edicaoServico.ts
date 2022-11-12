@@ -1,34 +1,46 @@
 import Entrada from "../../io/entrada";
 import Servico from "../../modelo/servico";
 import Edicao from "../edicao";
+import ListagemServicoCod from "./listagemServicoCod";
 
-export default class EdicaoServico extends Edicao {
-    private servicos: Array<Servico>
+export default class EdicaoProduto extends Edicao {
+    private servico: Array<Servico>
     private entrada: Entrada
     
-    constructor(servicos: Array<Servico>){
+    constructor(servico: Array<Servico>){
         super();
-        this.servicos = servicos;
+        this.servico = servico;
         this.entrada = new Entrada();
     }
 
     public editar(): void {
-        console.log('\n Início de edição do serviço');
-        let antigoServico = undefined
-        while (antigoServico == undefined) {
-            let codigo = this.entrada.receberNumero('Por favor informe o código do serviço a ser editado: ');
-            antigoServico = this.servicos.find(s => s.cod == codigo);
+        console.log('\n Início de edição do produto');
 
-            if (antigoServico != undefined) {
-                break;
-            }
-            console.log('Serviço não encontrado');
-        }
+        let listaServico = new ListagemServicoCod(this.servico)
+        listaServico.listar();
+        
+        let antigoServico = listaServico.validar() as Servico;
         let nome = this.entrada.receberTexto(`Por favor informe o nome do serviço (Antes era ${antigoServico.nome}): `);
-        let valor = this.entrada.receberNumero(`Por favor informe o vaor do serviço (Antes era ${antigoServico.valor})`);
+        let valor = this.entrada.receberNumero(`Por favor informe o valor do serviço (Antes era R$${antigoServico.valor}): `);
         let novoServico = new Servico(nome, antigoServico.cod, valor);
-        let indice = this.servicos.findIndex(s => antigoServico.cod == s.cod);
-        this.servicos[indice] = novoServico;
-        console.log('Serviço alterado');
+        console.log(`Trocar serviço ${antigoServico.nome} valor R$${antigoServico.valor} por ${novoServico.nome} valor R$${novoServico.valor}?\n1 - Sim\n2 - Não`);
+        let resposta = this.entrada.receberNumero('Resposta: ');
+        let running = true;
+        while(running){
+            switch(resposta){
+                case 1:
+                    let indice = this.servico.findIndex(produto => antigoServico.cod == produto.cod);
+                    this.servico[indice] = novoServico;
+                    console.log('Alteração de serviço CONCLUÍDA');
+                    running = false;
+                    break;
+                case 2:
+                    console.log('Alteração de serviço CANCELADA');
+                    running = false;
+                    break;
+                default:
+                    console.log('Comando não compreendido');
+            }
+        }
     }
 }
