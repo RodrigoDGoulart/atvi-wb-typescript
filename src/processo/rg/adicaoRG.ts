@@ -24,6 +24,7 @@ export default class AdicaoRG extends Cadastro {
 
         console.log('Início de cadastro de telefone');
         let valor = this.entrada.receberTexto('Por favor, insira o número do RG: ');
+        console.log('Por favor, insira a data de emissão do RG (formato: dd/mm/aaaa): ');
         let dataEmissao = new ReceberData().receber();
         let rg = new RG(valor, dataEmissao)
         console.log(`RG Cadastrado:\nValor: ${rg.getValor}\nData de emissão: ${rg.getDataEmissao.toLocaleDateString('pt-br')}\n`)

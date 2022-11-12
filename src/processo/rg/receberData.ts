@@ -11,7 +11,7 @@ export default class ReceberData {
     public receber = () => {
         let running = true;
         while (running) {
-            let dataEmissaoString = this.entrada.receberTexto('Por favor, insira a data de emissão do RG (formato: dd/mm/aaaa): ');
+            let dataEmissaoString = this.entrada.receberTexto('');
             let dataEmissaoArray = dataEmissaoString.split('/');
             dataEmissaoString = `${dataEmissaoArray[2]}-${dataEmissaoArray[1]}-${dataEmissaoArray[0]}`;
             let dataEmissao = new Date(dataEmissaoString);

@@ -1,6 +1,7 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import AdicaoRG from "../processo/rg/adicaoRG";
+import EdicaoRg from "../processo/rg/edicaoRg";
 
 export default class MainRG {
     private empresa: Empresa
@@ -30,7 +31,7 @@ export default class MainRG {
                     // codigo
                     break;
                 case 3:
-                    // codigo
+                    new EdicaoRg(this.empresa.getClientes).editar();
                     break;
                 case 0:
                     this.running = false;
