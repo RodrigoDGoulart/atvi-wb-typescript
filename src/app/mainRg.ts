@@ -2,6 +2,7 @@ import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import AdicaoRG from "../processo/rg/adicaoRG";
 import EdicaoRg from "../processo/rg/edicaoRg";
+import RemocaoRG from "../processo/rg/remocaoRg";
 
 export default class MainRG {
     private empresa: Empresa
@@ -28,7 +29,7 @@ export default class MainRG {
                     new AdicaoRG(this.empresa.getClientes).cadastrar();
                     break;
                 case 2:
-                    // codigo
+                    new RemocaoRG(this.empresa.getClientes).excluir();
                     break;
                 case 3:
                     new EdicaoRg(this.empresa.getClientes).editar();

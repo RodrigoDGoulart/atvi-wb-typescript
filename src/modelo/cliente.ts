@@ -79,4 +79,8 @@ export default class Cliente {
     public addRg(rg: RG){
         this.rgs.push(rg);
     }
+
+    public delRg(indice: number){
+        this.rgs.splice(indice, 1);
+    }
 }
