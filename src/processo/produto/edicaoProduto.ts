@@ -1,6 +1,7 @@
 import Entrada from "../../io/entrada";
 import Produto from "../../modelo/produto";
 import Edicao from "../edicao";
+import ValidarValor from "../servico/validarValor";
 import ListagemProdutoCod from "./listagemProdutoCod";
 
 export default class EdicaoProduto extends Edicao {
@@ -21,7 +22,8 @@ export default class EdicaoProduto extends Edicao {
 
         let antigoProduto = listaProduto.validar() as Produto;
         let nome = this.entrada.receberTexto(`Por favor informe o nome do produto (Antes era ${antigoProduto.nome}): `);
-        let valor = this.entrada.receberNumero(`Por favor informe o valor do produto (Antes era R$${antigoProduto.valor}): `);
+        console.log(`Por favor informe o valor do produto (Antes era R$${antigoProduto.valor}): `);
+        let valor = new ValidarValor().validar() as number;
         let novoProduto = new Produto(nome, antigoProduto.cod, valor);
         console.log(`Trocar produto ${antigoProduto.nome} valor R$${antigoProduto.valor} por ${novoProduto.nome} valor R$${novoProduto.valor}?\n1 - Sim\n2 - Não`);
         let resposta = this.entrada.receberNumero('Resposta: ');
