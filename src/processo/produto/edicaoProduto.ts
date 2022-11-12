@@ -1,6 +1,7 @@
 import Entrada from "../../io/entrada";
 import Produto from "../../modelo/produto";
 import Edicao from "../edicao";
+import ListagemProdutoCod from "./listagemProdutoCod";
 
 export default class EdicaoProduto extends Edicao {
     private produtos: Array<Produto>
@@ -14,21 +15,32 @@ export default class EdicaoProduto extends Edicao {
 
     public editar(): void {
         console.log('\n Início de edição do produto');
-        let antigoProduto = undefined
-        while (antigoProduto == undefined) {
-            let codigo = this.entrada.receberNumero('Por favor informe o código do produto a ser editado: ');
-            antigoProduto = this.produtos.find(produto => produto.cod == codigo);
 
-            if (antigoProduto != undefined) {
-                break;
-            }
-            console.log('Produto não encontrado');
-        }
+        let listaProduto = new ListagemProdutoCod(this.produtos)
+        listaProduto.listar();
+        
+        let antigoProduto = listaProduto.validar() as Produto;
         let nome = this.entrada.receberTexto(`Por favor informe o nome do produto (Antes era ${antigoProduto.nome}): `);
         let valor = this.entrada.receberNumero(`Por favor informe o valor do produto (Antes era R$${antigoProduto.valor}`)
         let novoProduto = new Produto(nome, antigoProduto.cod, valor);
-        let indice = this.produtos.findIndex(produto => antigoProduto.cod == produto.cod);
-        this.produtos[indice] = novoProduto;
-        console.log('Produto alterado');
+        console.log(`Trocar produto ${antigoProduto.nome} valor R$${antigoProduto.valor} por ${novoProduto.nome} valor R$${novoProduto.valor}?\n1 - Sim\n2 - Não`);
+        let resposta = this.entrada.receberNumero('Resposta: ');
+        let running = true;
+        while(running){
+            switch(resposta){
+                case 1:
+                    let indice = this.produtos.findIndex(produto => antigoProduto.cod == produto.cod);
+                    this.produtos[indice] = novoProduto;
+                    console.log('Alteração de produto CONCLUÍDA');
+                    running = false;
+                    break;
+                case 2:
+                    console.log('Alteração de produto CANCELADA');
+                    running = false;
+                    break;
+                default:
+                    console.log('Comando não compreendido');
+            }
+        }
     }
 }
