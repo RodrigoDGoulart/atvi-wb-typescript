@@ -1,8 +1,9 @@
 import Entrada from "../../io/entrada";
 import Servico from "../../modelo/servico";
 import Exclusao from "../exclusao";
+import ListagemServicoCod from "./listagemServicoCod";
 
-export default class ExclusaoServico extends Exclusao {
+export default class ExclusaoProduto extends Exclusao {
     private servicos: Array<Servico>
     private entrada: Entrada
     
@@ -14,31 +15,30 @@ export default class ExclusaoServico extends Exclusao {
 
     public excluir(): void {
         console.log('\n Início de exclusão do serviço');
-        let servico = undefined;
-        while (servico == undefined) {
-            let cod = this.entrada.receberNumero('Por favor informe o código do serviço a ser editado: ');
-            servico = this.servicos.find(p => p.cod == cod);
-            if (servico != undefined) {
-                break;
-            }
-            console.log('Serviço não encontrado');
-        }
-        let confirmacao = this.entrada.receberNumero(`Tem certeza em excluir o serviço ${servico.nome}?
-        1 - Sim
-        2 - Não 
-        Resposta: `);
-        do {
-            switch(confirmacao){
+
+        let listaServico = new ListagemServicoCod(this.servicos)
+        listaServico.listar();
+
+        let produto = listaServico.validar() as Servico;
+
+        let running = true;
+        while(running){
+            console.log(`Excluir serviço ${produto.nome}?\n1 - Sim\n2 - Não`);
+            let opcao = this.entrada.receberNumero('Resposta: ');
+            switch(opcao){
                 case 1:
-                    delete this.servicos[this.servicos.indexOf(servico)];
-                    console.log('Serviço excluído.');
+                    let indice = this.servicos.findIndex(item => item.cod === produto.cod);
+                    delete this.servicos[indice];
+                    console.log('Exclusão concluída');
+                    running = false;
                     break;
                 case 2:
-                    console.log('Exclusão cancelada.');
+                    console.log('Exclusão cancelada');
+                    running = false;
                     break;
                 default:
-                    console.log('Comando não compreendido.');
+                    console.log('Comando não compreendido')
             }
-        } while (confirmacao < 1 || confirmacao > 2);
+        }
     }
 }
